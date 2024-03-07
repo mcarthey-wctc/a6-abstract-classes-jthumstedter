@@ -31,6 +31,9 @@ public class MediaRepository : IMediaRepository
 
         foreach (var media in _context.Media)
         {
+            if(media.GetType().Name == type && media.Title == title) {
+                return media;
+            }
         }
 
         // Your code ends here.
