@@ -31,7 +31,7 @@ public class MediaRepository : IMediaRepository
 
         foreach (var media in _context.Media)
         {
-            if(media.GetType().Name == type && media.Title == title) {
+            if(media.GetType().Name.ToLower() == type.ToLower() && media.Title.ToLower() == title.ToLower()) {
                 return media;
             }
         }
